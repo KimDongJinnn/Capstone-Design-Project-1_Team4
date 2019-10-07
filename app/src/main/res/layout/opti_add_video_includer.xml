@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ /*
+  ~ * Created by Optisol on Aug 2019.
+  ~ * Copyright © 2019 Optisol Business Solutions pvt ltd. All rights reserved.
+  ~ * */
+  -->
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+    <include layout="@layout/opti_fragment_add_video_dialog" />
+</RelativeLayout>
+
+<!--
+select a video를 누르면 나타나는 화면
+맨처음창에서 select a video가 나타나져있다가 도영상을 추가하는것을 눌렀을때동영상이 추가되게 된다-->

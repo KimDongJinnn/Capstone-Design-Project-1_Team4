@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ /*
+  ~ * Created by Optisol on Aug 2019.
+  ~ * Copyright © 2019 Optisol Business Solutions pvt ltd. All rights reserved.
+  ~ * */
+  -->
+
+<resources>
+    <color name="colorPrimary">#FFCDD2</color> <!--아이콘 배경색-->
+    <color name="colorPrimaryDark">#757172</color> <!--상단바 색상-->
+    <color name="colorAccent">#FF0000</color> <!-- 동영상 편집시 cancel save-->
+
+    <color name="black">#000000</color>
+    <color name="white">#ffffff</color>
+
+    <color name="text_header">#FF8A65</color>
+    <color name="line_color">#7a7a7a</color> <!--select music시 글자 색 -->
+    <color name="colorDivider">#aaaaaa</color> <!--select music시 라인 색 -->
+    <color name="text_grey">#949495</color>
+
+    <color name="blue">#00e1e7</color>
+    <color name="light_blue">#b9b4ff</color>
+    <color name="shadow_color">#FF000000</color>
+    <color name="line_button">#F06292</color>
+    <color name="background_video_color">#000000</color> <!-- 동영상 구간 편집시 background-->
+</resources>

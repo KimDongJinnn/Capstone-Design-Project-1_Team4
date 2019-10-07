@@ -1,0 +1,15 @@
+<!--
+  ~ /*
+  ~ * Created by Optisol on Aug 2019.
+  ~ * Copyright © 2019 Optisol Business Solutions pvt ltd. All rights reserved.
+  ~ * */
+  -->
+
+<com.obs.marveleditor.videoTrimmer.OptiHgLVideoTrimmer
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/timeLine"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+<!--동영상 편집시동영상의 전체 timeline을 표시해줌 이를 변경가능하게 해준다,-->
+

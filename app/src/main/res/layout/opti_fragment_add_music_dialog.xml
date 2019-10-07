@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ /*
+  ~ * Created by Optisol on Aug 2019.
+  ~ * Copyright © 2019 Optisol Business Solutions pvt ltd. All rights reserved.
+  ~ * */
+  -->
+<!--전체적으로 music dialog의 모든 정보를 담고있는 xml파일이다 opti_add_music_includer에서 사용된다.-->
+
+<LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:custom="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/_10sdp"
+        android:background="@drawable/curve_shape_background"
+        android:orientation="vertical">
+<!--전체적으로 수직으로 lineralayout을 가지며-->
+    <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_46sdp">
+<!--        select music과 x 버튼을 갖고 있는 layout-->
+
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="@dimen/_15sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:fontFamily="@font/roboto_black"
+                android:text="@string/select_music"
+                android:textColor="@color/line_color"
+                android:textSize="@dimen/textLarge"/>
+<!--
+가장 먼저 음악을 고르라는 말이 적혀있음.
+line_colcor에 의해 영향을 받음.
+-->
+        <android.support.v7.widget.AppCompatImageView
+                android:id="@+id/acivClose"
+                android:layout_width="@dimen/_18sdp"
+                android:layout_height="@dimen/_18sdp"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:layout_marginEnd="@dimen/_15sdp"
+                android:tint="@color/black"
+                app:srcCompat="@drawable/close"/>
+    </RelativeLayout>
+<!--
+select music옆에 x버튼
+-->
+    <View
+            android:layout_width="fill_parent"
+            android:layout_height="1dp"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:layout_marginEnd="@dimen/_10sdp"
+            android:background="@color/colorDivider"/>
+<!--
+    select music과 label을 구분 지어주는 ㅅ선
+    colorDivider의 색상의해 영향을 받는다
+-->
+    <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_46sdp">
+        <!--label과 옆의 이미지를 갖고 있는 layout-->
+
+        <TextView
+                android:id="@+id/tv_selected_audio"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_15sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginEnd="@dimen/_10sdp"
+                android:layout_marginBottom="@dimen/_10sdp"
+                android:maxLines="1"
+                android:ellipsize="end"
+                android:fontFamily="@font/roboto_black"
+                android:text="@string/label"
+                android:textColor="@color/line_color"
+                android:textSize="@dimen/textLarge"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/ivRadio"/>
+<!--        Label textbox 이 박스를 누르게되면 음악을 선택하는 부분으로 넘어간다 . 글자색은 line_color에 의해 영향을 받음
+또한 여기서 음악이 선택된다면 textbox 안의 내용이 음악명으로 변경된다.-->
+
+        <android.support.v7.widget.AppCompatImageView
+                android:id="@+id/ivRadio"
+                android:layout_width="@dimen/_24sdp"
+                android:layout_height="@dimen/_24sdp"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:layout_marginEnd="@dimen/_15sdp"
+                app:srcCompat="@drawable/radio3x"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/tv_selected_audio"/>
+    </android.support.constraint.ConstraintLayout>
+<!--    라벨 옆에있는 이미지 파일로 drawable에 있는 radio3x이미지 파일이 표시된다.-->
+
+    <View
+            android:layout_width="fill_parent"
+            android:layout_height="1dp"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:layout_marginEnd="@dimen/_10sdp"
+            android:background="@color/colorDivider"/>
+<!--
+    음악 명과 play time을 구분 해주는 선
+-->
+    <TextView
+            android:id="@+id/tvSubTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_15sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:fontFamily="@font/roboto_black"
+            android:text="@string/play_time"
+            android:textColor="@color/line_color"
+            android:textSize="@dimen/textLarge"/>
+<!--
+음악선택시 play time을 나타내는 textbox line_color에 영향을 준다
+-->
+    <com.github.guilhe.views.SeekBarRangedView
+            android:id="@+id/sbrvVideoTrim"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_30sdp"
+            custom:backgroundColor="@color/line_color"
+            custom:backgroundHeight="10dp"
+            custom:currentMin="10"
+            custom:progressColor="@color/text_header"
+            custom:progressHeight="20dp"
+            custom:rounded="false"/>
+<!--    music선택시 music의 전체 러닝 타임을 나타내줌 조정가능-->
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_5sdp"
+            android:layout_marginEnd="@dimen/_5sdp"
+            android:weightSum="2">
+
+        <android.support.v7.widget.AppCompatTextView
+                android:id="@+id/actvStartTime"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="start|center_vertical"/>
+    <!--    playtime이 떴을때 지정시 최초 start 위치
+-->
+        <android.support.v7.widget.AppCompatTextView
+                android:id="@+id/actvEndTime"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="end|center_vertical"/>
+    </LinearLayout>
+    <!--    playtime이 떴을때 지정시 최초 end 위치
+-->
+
+    <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        <android.support.v7.widget.AppCompatButton
+                android:id="@+id/acbCrop"
+                android:layout_width="@dimen/_100sdp"
+                android:layout_height="@dimen/_45sdp"
+                android:layout_centerInParent="true"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginStart="@dimen/_20sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginEnd="@dimen/_20sdp"
+                android:layout_marginBottom="@dimen/_10sdp"
+                android:background="@drawable/curve_shape_background_black"
+                android:fontFamily="@font/roboto_black"
+                android:gravity="center"
+                android:text="@string/save"
+                android:textColor="@color/white"
+                android:textSize="@dimen/textLarge"
+                android:visibility="visible"/>
+        <!--save박스-->
+
+        <FrameLayout
+                android:id="@+id/flLoadingView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_margin="@dimen/_10sdp"
+                android:visibility="gone">
+<!--            세이브르 눌렀을때 진행현황을 보여주는 부분-->
+
+            <ProgressBar
+                    style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:indeterminate="true"/>
+
+            <android.support.v7.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_margin="@dimen/_10sdp"
+                    android:text="@string/processing_video"/>
+        </FrameLayout>
+
+    </RelativeLayout>
+
+</LinearLayout>
